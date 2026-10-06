@@ -1,0 +1,50 @@
+# Секреты и пароли
+.env
+.env.*
+!.env.example
+src/main/resources/database.properties
+src/main/resources/config.properties
+*.pem
+*.key
+*.p12
+*.jks
+secrets/
+
+# Maven 
+target/
+dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
+# IDE 
+.idea/
+*.iml
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+
+# ОС 
+.DS_Store
+Thumbs.db
+
+# Логи 
+*.log
+logs/
+
+# Выгрузки с данными клиентов 
+flower_shop_export_*
+exports/
+
+# Локальные данные Docker 
+pgdata/
+postgres-data/
+
+# Архив с примером из задания 
+*.zip
+backend/
+android-client/
+javafx-client/
