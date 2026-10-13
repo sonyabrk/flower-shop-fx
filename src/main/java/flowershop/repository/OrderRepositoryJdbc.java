@@ -157,7 +157,7 @@ public class OrderRepositoryJdbc implements OrderRepository {
         }
     }
  
-    // Имя столбца подставляется только из двух констант выше, пользовательский ввод сюда не попадает.
+    // Имя столбца подставляется только из двух констант выше, пользовательский ввод сюда не попадает
     private List<BouquetOrder> findByForeignKey(String column, Long id, String errorMessage) {
         String sql = SELECT_ORDERS + " WHERE " + column + " = ? ORDER BY id";
         List<BouquetOrder> result = new ArrayList<>();

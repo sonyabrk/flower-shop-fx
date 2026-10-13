@@ -1,4 +1,4 @@
-package main.java.flowershop.model;
+package flowershop.model;
 
 public enum OrderStatus {
     NEW,
