@@ -1,4 +1,4 @@
-package main.java.flowershop.model;
+package flowershop.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package main.java.flowershop;
+package flowershop;
 
 public class AppContext {
     
