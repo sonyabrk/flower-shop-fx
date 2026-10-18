@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="flowershop.controller.CustomersController" styleClass="tab-content">
+    <top>
+        <VBox spacing="10" styleClass="toolbar">
+            <FlowPane hgap="8" vgap="8" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Поиск: имя, email или телефон" prefWidth="320"/>
+            </FlowPane>
+            <FlowPane hgap="8" vgap="8" alignment="CENTER_LEFT">
+                <Button text="Добавить" onAction="#onAdd" styleClass="primary-button"/>
+                <Button fx:id="editButton" text="Изменить" onAction="#onEdit"/>
+                <Button fx:id="deleteButton" text="Удалить" onAction="#onDelete" styleClass="danger-button"/>
+                <Button text="Обновить" onAction="#onRefresh"/>
+            </FlowPane>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="customersTable">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <placeholder>
+                <Label text="Клиенты не найдены."/>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Имя" prefWidth="260"/>
+                <TableColumn fx:id="phoneColumn" text="Телефон" prefWidth="180"/>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="260"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <Label fx:id="countLabel" styleClass="count-label"/>
+    </bottom>
+</BorderPane>

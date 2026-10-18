@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="flowershop.controller.OrderDialogController"
+          hgap="12" vgap="12" styleClass="form-grid" prefWidth="520">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" minWidth="120" prefWidth="130"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="260" prefWidth="350"/>
+    </columnConstraints>
+
+    <Label text="Клиент *" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <ComboBox fx:id="customerBox" maxWidth="Infinity" promptText="Выберите клиента"
+              GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Label text="Букет *" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <ComboBox fx:id="bouquetBox" maxWidth="Infinity" promptText="Выберите букет"
+              GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Количество *" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="quantityField" promptText="от 1 до 999"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Сумма" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label fx:id="totalLabel" text="—" styleClass="total-label"
+           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Дата заказа" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <DatePicker fx:id="orderDatePicker" maxWidth="Infinity" promptText="дд.мм.гггг"
+                GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Дата доставки" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <DatePicker fx:id="deliveryDatePicker" maxWidth="Infinity" promptText="необязательно"
+                GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Статус" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Label fx:id="statusLabel" text="Новый" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="* — обязательные поля. Сумма рассчитывается автоматически." styleClass="hint-label"
+           GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7"/>
+</GridPane>

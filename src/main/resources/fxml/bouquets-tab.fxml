@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="flowershop.controller.BouquetsController" styleClass="tab-content">
+    <top>
+        <VBox spacing="10" styleClass="toolbar">
+            <FlowPane hgap="8" vgap="8" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Поиск по названию или описанию"
+                           prefWidth="280" onAction="#onApply"/>
+                <TextField fx:id="minPriceField" promptText="Цена от" prefWidth="110" onAction="#onApply"/>
+                <TextField fx:id="maxPriceField" promptText="Цена до" prefWidth="110" onAction="#onApply"/>
+                <Button text="Применить" onAction="#onApply"/>
+                <Button text="Сбросить" onAction="#onReset"/>
+            </FlowPane>
+            <FlowPane hgap="8" vgap="8" alignment="CENTER_LEFT">
+                <Button text="Добавить" onAction="#onAdd" styleClass="primary-button"/>
+                <Button fx:id="editButton" text="Изменить" onAction="#onEdit"/>
+                <Button fx:id="deleteButton" text="Удалить" onAction="#onDelete" styleClass="danger-button"/>
+            </FlowPane>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="bouquetsTable">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <placeholder>
+                <Label text="Букеты не найдены."/>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Название" prefWidth="240"/>
+                <TableColumn fx:id="descriptionColumn" text="Описание" prefWidth="340"/>
+                <TableColumn fx:id="priceColumn" text="Цена" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <Label fx:id="countLabel" styleClass="count-label"/>
+    </bottom>
+</BorderPane>

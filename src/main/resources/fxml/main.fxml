@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="flowershop.controller.MainController">
+    <top>
+        <HBox styleClass="app-header" alignment="CENTER_LEFT">
+            <Label text="Цветочный магазин" styleClass="app-title"/>
+            <Label text="Заказы, клиенты и каталог букетов" styleClass="app-subtitle"/>
+        </HBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Заказы">
+                <fx:include fx:id="ordersTab" source="orders-tab.fxml"/>
+            </Tab>
+            <Tab text="Клиенты">
+                <fx:include fx:id="customersTab" source="customers-tab.fxml"/>
+            </Tab>
+            <Tab text="Букеты">
+                <fx:include fx:id="bouquetsTab" source="bouquets-tab.fxml"/>
+            </Tab>
+            <Tab text="Статистика">
+                <fx:include fx:id="statisticsTab" source="statistics-tab.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

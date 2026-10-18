@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="flowershop.controller.StatisticsController"
+            fitToWidth="true" styleClass="tab-content">
+    <VBox spacing="16" styleClass="stats-box">
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="Статистика заказов" styleClass="section-title"/>
+            <Button text="Обновить" onAction="#onRefresh"/>
+        </HBox>
+
+        <FlowPane hgap="12" vgap="12">
+            <VBox styleClass="stat-card">
+                <Label fx:id="totalOrdersLabel" text="—" styleClass="stat-value"/>
+                <Label text="Всего заказов" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="totalCustomersLabel" text="—" styleClass="stat-value"/>
+                <Label text="Всего клиентов" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="totalBouquetsLabel" text="—" styleClass="stat-value"/>
+                <Label text="Букетов в каталоге" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="revenueLabel" text="—" styleClass="stat-value"/>
+                <Label text="Выручка (доставленные заказы)" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="averageLabel" text="—" styleClass="stat-value"/>
+                <Label text="Средняя сумма заказа" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="minLabel" text="—" styleClass="stat-value"/>
+                <Label text="Минимальная сумма заказа" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="maxLabel" text="—" styleClass="stat-value"/>
+                <Label text="Максимальная сумма заказа" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="popularLabel" text="—" styleClass="stat-value" wrapText="true" maxWidth="220"/>
+                <Label text="Самый популярный букет" styleClass="stat-caption"/>
+            </VBox>
+            <VBox styleClass="stat-card">
+                <Label fx:id="cancelledLabel" text="—" styleClass="stat-value"/>
+                <Label text="Доля отменённых заказов" styleClass="stat-caption"/>
+            </VBox>
+        </FlowPane>
+
+        <PieChart fx:id="statusChart" title="Заказы по статусам" prefHeight="340" legendSide="RIGHT"/>
+    </VBox>
+</ScrollPane>
