@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: flowershop-db
+    environment:
+      POSTGRES_DB: flowershop
+      POSTGRES_USER: flowershop
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Задайте DB_PASSWORD в файле .env}
+    ports:
+      - "55433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flowershop -d flowershop"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
